@@ -1,0 +1,137 @@
+/* Mantén tu CSS original aquí. Añade los bloques modernos y creativos para dashboard, modo oscuro, animaciones, chat y notificaciones. Puedes copiar y combinar lo que tienes con lo que te he dado antes. */
+
+body.dark-mode {
+  background: linear-gradient(135deg, #181825 0%, #232946 100%);
+  color: #e1e1e6;
+}
+body.dark-mode .navbar,
+body.dark-mode .section,
+body.dark-mode .footer,
+body.dark-mode .main-section,
+body.dark-mode .card-formulario {
+  background: #22223a !important;
+  color: #eee !important;
+  box-shadow: none;
+}
+.dark-toggle {
+  position: fixed;
+  top: 13px;
+  right: 18px;
+  z-index: 999;
+  font-size: 1.35em;
+  background: linear-gradient(90deg,#232546 50%,#6700A3 100%);
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  padding: 0.26em 0.33em;
+  cursor: pointer;
+  box-shadow: 0 3px 14px #2223;
+  transition: background .2s;
+}
+body.dark-mode .dark-toggle { background: linear-gradient(90deg,#6700A3 50%,#232546 100%);}
+.anim-bounce { animation: bounce 1.2s infinite alternate;}
+@keyframes bounce { 0% {transform:translateY(0);} 100% {transform:translateY(-17px);} }
+
+.frase-genial {
+  text-align:center;
+  font-size:1.17em;
+  font-family: 'Montserrat',sans-serif;
+  margin: 1em auto 0.18em auto;
+  color: var(--violet);
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 0.3em 1em;
+  box-shadow: 0 2px 8px #d5e6f055;
+  max-width: 480px;
+  transition: background .2s, color .2s;
+}
+body.dark-mode .frase-genial { background: #232546; color: #34a787; }
+
+.dashboard {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+  margin: 1.2em 0 1.2em 0;
+}
+.dashboard-card {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 4px 16px #c7beea44;
+  text-align: center;
+  min-width: 95px;
+  padding: 0.7em 0.3em;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--violet);
+  transition: background .2s, color .2s;
+}
+body.dark-mode .dashboard-card { background: #232546; color: #34a787; }
+
+.noti-pop {
+  position: fixed;
+  bottom: 24px;
+  right: 22px;
+  z-index: 999;
+  background: #fff;
+  color: #6700A3;
+  border-radius: 10px;
+  box-shadow: 0 7px 24px #6700a355;
+  padding: 0.8em 1.2em;
+  font-size: 1.07em;
+  display: none;
+  animation: fadein 0.7s;
+}
+@keyframes fadein { from {opacity:0;} to {opacity:1;} }
+
+.easter-egg {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background: #fff;
+  color: #E35314;
+  border: 3px solid #6700A3;
+  border-radius: 18px;
+  padding: 2em 2em;
+  box-shadow: 0 12px 40px #6700A399;
+  font-size: 1.4em;
+  text-align: center;
+  display: none;
+  animation: fadein 0.9s;
+}
+body.dark-mode .easter-egg { background: #232546; color: #E35314; border-color: #34a787;}
+
+.chat-wall {
+  background: #f6fafd;
+  border-radius: 13px;
+  box-shadow: 0 2px 9px #e1e9f6bb;
+  padding: 1em 0.8em;
+  max-width: 430px;
+  min-height: 85px;
+  margin: 1em auto 1em auto;
+  font-size: 1em;
+  color: #232546;
+}
+body.dark-mode .chat-wall { background: #232546; color: #eee; }
+
+.chat-msg-block {
+  border-bottom: 1px solid #e2def3;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.2em;
+  font-size: 1em;
+}
+.chat-msg-nombre {
+  font-weight: 700;
+  color: #6700A3;
+}
+body.dark-mode .chat-msg-nombre { color: #34a787; }
+
+/* ... tu CSS original para cards, navbar, responsive ... */
+
+@media(max-width:900px){
+  .dashboard{flex-direction:column;align-items:center;gap:.7em;}
+  .dashboard-card{min-width:69vw;max-width:95vw;}
+  .frase-genial{max-width:99vw;}
+  .chat-wall{max-width:97vw;}
+}

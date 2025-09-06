@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Impossible Hub</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/YOyQ6uR.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- MODO OSCURO -->
+<button id="darkToggle" class="dark-toggle" title="Modo Oscuro/Claro">🌙</button>
+<!-- NAVBAR -->
+<nav class="navbar container">
+    <div style="display:flex;align-items:center;">
+      <img src="https://i.imgur.com/YOyQ6uR.png" alt="TIH logo">
+      <span class="navbar-brand">Impossible Hub</span>
+    </div>
+    <ul class="navbar-nav">
+      <li><a href="#" class="navlink active" data-tab="home">Home</a></li>
+      <li><a href="#" class="navlink" data-tab="labores">Labores con Arte</a></li>
+      <li><a href="#" class="navlink" data-tab="team">Somos Uno</a></li>
+      <li><a href="#" class="navlink" data-tab="plans">Suscripción</a></li>
+      <li><a href="#" class="navlink" data-tab="contact">Contacto</a></li>
+      <li><a href="#" class="navlink" data-tab="proyectos">Proyectos</a></li>
+      <li><a href="#" class="navlink" data-tab="chat">Chat</a></li>
+      <li><a href="#" class="navlink" id="randomBtn">🎲 Sorpresa</a></li>
+    </ul>
+</nav>
+<!-- FRASE INSPIRADORA -->
+<div id="frase-genial" class="frase-genial"></div>
+<!-- HOME -->
+<section class="container section active-section" id="tab-home">
+  <div class="hero-sec">
+    <img src="https://i.imgur.com/YOyQ6uR.png" alt="TIH" class="hero-logo anim-bounce">
+    <div class="hero-title">Bienvenidx a <span>The Impossible Hub</span></div>
+    <div class="hero-sub">Ecosistema, inclusión y tecnología para el cambio social.<br>Un Hub donde lo imposible se hace plataforma y comunidad.</div>
+    <div class="dashboard">
+      <div class="dashboard-card"><span id="stat-personas">0</span><br><small>Personas</small></div>
+      <div class="dashboard-card"><span id="stat-proyectos">0</span><br><small>Proyectos</small></div>
+      <div class="dashboard-card"><span id="stat-mensajes">0</span><br><small>Mensajes Chat</small></div>
+      <div class="dashboard-card"><span id="stat-easter">?</span><br><small>Easter Eggs</small></div>
+    </div>
+    <div style="margin:2em 0 0 0;">
+      <a class="btn btn-main navlink" data-tab="labores" href="#">Descubre el Ecosistema</a>
+      <a class="btn btn-soft navlink" data-tab="plans" href="#">Únete a la Comunidad</a>
+    </div>
+  </div>
+</section>
+<!-- LABORES CON ARTE -->
+<section class="container section" id="tab-labores">
+  <!-- Usa tu HTML original aquí (pilares, comunidades, detalles) -->
+  <!-- Puedes copiar el bloque que mandaste, todo funcionará igual -->
+  <!-- ... -->
+</section>
+<!-- SOMOS UNO -->
+<section class="container section" id="tab-team">
+  <div style="text-align:center; margin-bottom:1em;">
+    <strong>¿Quieres colaborar/dar visibilidad? Regístrate gratis y aparecerás aquí:</strong>
+    <button class="btn btn-main" id="btn-nueva-ficha">Añadir Servicio/Producto</button>
+  </div>
+  <div class="searchbar-wrap">
+    <input type="text" class="searchbar" id="buscador" placeholder="Buscar por nombre, correo, empresa, área...">
+  </div>
+  <div class="card-row team" id="team-personas"></div>
+  <!-- Formulario de registro nuevo colaborador -->
+  <form id="ficha-nueva" class="card-formulario" style="display:none;">
+    <h2>Registro de nuevo colaborador</h2>
+    <label>Nombre o entidad</label>
+    <input name="ficha-nombre" required>
+    <label>Correo electrónico</label>
+    <input name="ficha-email" type="email" required>
+    <label>Descripción de tu servicio/producto</label>
+    <textarea name="ficha-desc" rows="2" required></textarea>
+    <label>Tarifa (opcional)</label>
+    <input name="ficha-tarifa" type="text">
+    <label>Enlaces de redes sociales o portfolio</label>
+    <input name="ficha-links">
+    <button type="submit" class="btn btn-main">Enviar registro</button>
+    <div class="mini-info">Nos pondremos en contacto para verificar y publicar tu ficha.</div>
+  </form>
+</section>
+<!-- PROYECTOS -->
+<section class="container section" id="tab-proyectos" style="display:none;">
+  <div class="main-section">
+    <h2>🚀 Proyectos TIH</h2>
+    <div id="proyectos-row" class="card-row"></div>
+    <form id="proyecto-nuevo" class="card-formulario">
+      <h2>Propón un proyecto</h2>
+      <label>Nombre del proyecto</label>
+      <input name="proy-nombre" required>
+      <label>Descripción</label>
+      <textarea name="proy-desc" rows="2" required></textarea>
+      <label>Enlace (opcional)</label>
+      <input name="proy-link">
+      <button type="submit" class="btn btn-main">Enviar proyecto</button>
+    </form>
+    <div class="mini-info">Todos los proyectos serán revisados antes de ser publicados.</div>
+  </div>
+</section>
+<!-- CHAT COMUNITARIO -->
+<section class="container section" id="tab-chat" style="display:none;">
+  <div class="main-section">
+    <h2>💬 Chat Comunitario</h2>
+    <div id="chat-wall" class="chat-wall"></div>
+    <form id="chat-form" class="card-formulario">
+      <label>Tu nombre</label>
+      <input name="chat-nombre" required>
+      <label>Mensaje</label>
+      <input name="chat-msg" required maxlength="140">
+      <button type="submit" class="btn btn-main">Enviar</button>
+    </form>
+    <div class="mini-info">¡Comparte ideas, saludos, memes o lo que quieras!</div>
+  </div>
+</section>
+<!-- SUSCRIPCION -->
+<section class="container section" id="tab-plans">
+  <!-- ... igual que tu código original ... -->
+</section>
+<!-- CONTACTO -->
+<section class="container section" id="tab-contact">
+  <!-- ... igual que tu código original ... -->
+</section>
+<!-- NOTIFICACIONES -->
+<div id="notiPop" class="noti-pop"></div>
+<div id="easterEgg" class="easter-egg"></div>
+<!-- FOOTER -->
+<footer class="footer container">
+  <div style="margin-bottom:.4em;">
+    <img src="https://i.imgur.com/YOyQ6uR.png" alt="TIH">
+    <span style="font-weight:700; color:var(--accent);margin-left:.4em;">The Impossible Hub</span>
+  </div>
+  <div style="color:#485360;margin-bottom:.5em;">Ecosistema • Escucha • Transformación</div>
+  <div class="footer-links">
+    <a href="#">Términos Publicidad</a> | <a href="#">Privacidad</a> | <a href="#">Cumplimiento</a>
+  </div>
+  <div class="mini-legal">&copy; 2025 The Impossible Hub.</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
